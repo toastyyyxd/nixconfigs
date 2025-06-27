@@ -38,7 +38,7 @@
 #custom-music,
 #tray,
 #clock,
-#cpu, #memory.
+#cpu, #memory,
 #battery {
   background-color: @surface0;
   border-radius: 0px 1rem 1rem 0px;
