@@ -9,6 +9,7 @@
   # Import modules
   imports = [
     ../../modules/features/hyprland
+    ../../modules/features/hyprland/fractional-scaling.nix
     ../../modules/features/yazi.nix
     ../../modules/features/flatpak.nix
     ../../modules/features/git.nix
