@@ -20,6 +20,7 @@
     ../../modules/features/libreoffice.nix
     ../../modules/features/kicad.nix
     ../../modules/features/zen.nix
+    ../../modules/features/gimp.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
