@@ -1,16 +1,28 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
+    ./extra-hw-config.nix
+    ./filesystem.nix
     ../../modules/system/global.nix
     ../../modules/system/journald.nix
-    ../../modules/system/ssh.nix
+    ../../modules/system/ssh.nix ../../modules/system/yubikey-ssh.nix
+    ../../modules/system/yubikey.nix
+    ../../modules/system/swap-alt-win.nix # Windows keyboard pmo
     ../../modules/system/keyboard.nix
     ../../modules/system/networking.nix
     ../../modules/system/bluetooth.nix
+    ../../modules/system/audio.nix
+    ../../modules/system/intelgraphics.nix
+    ../../modules/system/hyprland.nix
+    ../../modules/system/wine.nix
+    ../../modules/system/gaming.nix
+    ../../modules/system/adb.nix
     ../../modules/system/utils.nix
     inputs.home-manager.nixosModules.default
   ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -42,7 +54,7 @@
   };
 
   # Basic system settings
-  system.stateVersion = "24.11"; # Adjust to your NixOS version
+  system.stateVersion = "25.05"; # Adjust to your NixOS version
 
   # Add any device-specific configurations here
 }

@@ -21,7 +21,7 @@
         start_hidden = true;
         modules-left = [ "clock" "hyprland/workspaces" ];
         modules-center = [ "custom/music" ];
-        modules-right = [ "tray" "cpu" "memory" ];
+        modules-right = [ "tray" "cpu" "memory" "battery" ];
         "hyprland/workspaces" = {
           format = "{icon}";
           format-icons = {

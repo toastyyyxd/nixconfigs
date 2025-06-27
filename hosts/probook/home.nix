@@ -16,8 +16,14 @@
     ../../modules/features/vscode.nix
     ../../modules/features/prismlauncher.nix
     ../../modules/features/tidal-hifi.nix
+    ../../modules/features/libreoffice.nix
     ../../modules/features/zen.nix
   ];
+
+  # Display scaling
+  wayland.windowManager.hyprland.settings = {
+    monitor = [ "eDP-1,1920x1080@60.00200,0x0,1.25" ];
+  };
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -26,6 +32,7 @@
     hyfetch # Neofetch
     s-tui stress
     vesktop # Vencord desktop - Discord
+    orca-slicer
   ];
 
   # This value determines the Home Manager release that your configuration is

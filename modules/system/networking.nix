@@ -5,6 +5,8 @@
   # manual work.
   # You can predefine some networks that will
   # persist between rebuilds.
+  networking.wireless.userControlled.enable = true;
+
   networking.networkmanager.enable = true;
   systemd.services."NetworkManager-wait-online".enable = false; # Prevent blocking boot.
 

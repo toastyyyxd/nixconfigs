@@ -19,6 +19,7 @@
     bindm = [
       "$mod, mouse:272, movewindow"
       "$mod, mouse:273, resizewindow"
+      "SHIFT $mod, mouse:272, resizewindow" # for laptops w/o RMB drag
     ];
   };
 }
