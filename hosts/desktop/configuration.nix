@@ -13,6 +13,7 @@
       ../../modules/system/bluetooth.nix
       ../../modules/system/openrgb.nix # ARGB lights.
       ../../modules/system/audio.nix ../../modules/system/alc4080-workaround.nix # Audio & workaround for slow boot with ALC4080 USB audio chip.
+      ../../modules/system/graphics/amd.nix
       ../../modules/system/hyprland.nix # NixOS module for hyprland.
       ../../modules/system/docker.nix
       ../../modules/system/wine.nix

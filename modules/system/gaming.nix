@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./wine.nix
-    ./graphics/default.nix
+    ./wine.nix  4
   ];
   programs.firejail.enable = true; # itch.io sandboxing
   programs.gamemode.enable = true; # GameMode daemon/lib

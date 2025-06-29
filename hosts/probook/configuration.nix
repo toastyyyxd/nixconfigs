@@ -13,7 +13,7 @@
     ../../modules/system/networking.nix
     ../../modules/system/bluetooth.nix
     ../../modules/system/audio.nix
-    ../../modules/system/graphics/default.nix
+    ../../modules/system/graphics/intel.nix
     ../../modules/system/hyprland.nix
     ../../modules/system/wine.nix
     ../../modules/system/gaming.nix
