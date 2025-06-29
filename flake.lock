@@ -531,11 +531,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1750019454,
-        "narHash": "sha256-tXwWx12ldFQa7byQ17FIH9gULMZvGWfDjQXoDLFD15s=",
+        "lastModified": 1750309050,
+        "narHash": "sha256-6okdGIAFHtKvNn3z9eMRMl/7Ub6Cjs+LfwbGmJQpJkM=",
         "owner": "Inrixia",
         "repo": "TidaLuna",
-        "rev": "7ff3e29ae39a7eba50970c6cce33ac67a6fb3009",
+        "rev": "fd5982d11646cea1824f427ad9a3f40560b7ce77",
         "type": "github"
       },
       "original": {
