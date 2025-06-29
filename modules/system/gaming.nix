@@ -2,7 +2,7 @@
 {
   imports = [
     ./wine.nix
-    ./amdgraphics.nix
+    ./graphics/default.nix
   ];
   programs.firejail.enable = true; # itch.io sandboxing
   programs.gamemode.enable = true; # GameMode daemon/lib
