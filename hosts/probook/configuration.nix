@@ -17,7 +17,7 @@
     ../../modules/system/hyprland.nix
     ../../modules/system/wine.nix
     ../../modules/system/gaming.nix
-    ../../modules/system/docker.nix
+    ../../modules/system/docker.nix ../../modules/system/cloudflared.nix
     ../../modules/system/adb.nix
     ../../modules/system/utils.nix
     inputs.home-manager.nixosModules.default
