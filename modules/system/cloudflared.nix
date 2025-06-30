@@ -1,4 +1,4 @@
 { config, pkgs, ... }:
 {
-  service.cloudflared.enable = true;
+  services.cloudflared.enable = true;
 }
