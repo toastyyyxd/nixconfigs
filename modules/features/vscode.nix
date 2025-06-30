@@ -45,6 +45,8 @@
         pmneo.tsimporter yoavbls.pretty-ts-errors stringham.move-ts
         # Nix
         jnoortheen.nix-ide
+        # Pythonms-python.python
+        ms-python.python
         # Formatting - Prettier
         esbenp.prettier-vscode
         # Git
