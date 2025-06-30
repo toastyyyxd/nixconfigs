@@ -19,6 +19,7 @@
     ../../modules/features/tidal-hifi.nix
     ../../modules/features/libreoffice.nix
     ../../modules/features/zen.nix
+    ../../modules/features/gimp.nix
   ];
 
   # Display scaling
