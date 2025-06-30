@@ -6,5 +6,6 @@
     yubico-pam
     yubikey-manager
     yubico-piv-tool
+    pcscd yubioath-flutter
   ];
 }
