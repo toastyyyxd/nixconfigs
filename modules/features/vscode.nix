@@ -56,7 +56,7 @@
         # Markdown
         yzhang.markdown-all-in-one
         # Docker
-        ms-azuretools.vscode-docker
+        ms-azuretools.vscode-docker ms-azuretools.vscode-containers
         # Prisma
         prisma.prisma abians.prisma-generate-uml
         # Discord activity
