@@ -29,5 +29,12 @@
     allowedTCPPorts = [
       8000 # SillyTavern
     ]; 
-  }; 
+  };
+
+  services.mullvad-vpn = {
+    enable = true;
+    package = pkgs.mullvad-vpn;
+    enableExcludeWrapper = false;
+  };
+  } 
 }
