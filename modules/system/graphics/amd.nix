@@ -9,7 +9,4 @@
       rocmPackages.clr.icd
     ];
   };
-  hardware.opengl = {
-    driSupport32Bit = true;
-  };
 }

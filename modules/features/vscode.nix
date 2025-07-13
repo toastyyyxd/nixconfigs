@@ -23,8 +23,6 @@
         "workbench.colorTheme" = "Catppuccin Mocha";
         "window.newWindowProfile" = "main";
       };
-      enableUpdateCheck = false;
-      enableExtensionUpdateCheck  = false;
         extensions = with pkgs.vscode-marketplace; [
         # Environment compat with Nix using direnv
         mkhl.direnv      
