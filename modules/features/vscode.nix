@@ -49,6 +49,7 @@
         esbenp.prettier-vscode
         # Git
         eamodio.gitlens donjayamanne.githistory codezombiech.gitignore alefragnani.project-manager
+        sanjulaganepola.github-local-actions
         # Copilot
         github.copilot github.copilot-chat
         # Remote SSH
