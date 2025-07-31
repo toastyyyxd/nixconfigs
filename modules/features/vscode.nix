@@ -20,6 +20,7 @@
       userSettings = {
         "zig.zls.enabled" = "on";
         "zig.path" = "zig";
+        "zig.zls.path" = "zls";
         "workbench.colorTheme" = "Catppuccin Mocha";
         "window.newWindowProfile" = "main";
       };
