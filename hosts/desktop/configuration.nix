@@ -38,6 +38,11 @@
   time.timeZone = "Asia/Hong_Kong";
   i18n.defaultLocale = "en_HK.UTF-8";
 
+  # Set tmpfiles configuration.
+  systemd.tmpfiles.rules = [
+    "z /tmp 1777 root root 10d"
+  ];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.toasty = {
     isNormalUser = true;
