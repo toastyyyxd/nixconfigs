@@ -40,8 +40,9 @@
 
   # Set tmpfiles configuration.
   systemd.tmpfiles.rules = [
-    "z /tmp 1777 root root 10d"
+    "d /nix/tmp 1777 root root 10d"
   ];
+  nix.settings.build-dir = "/nix/tmp";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.toasty = {

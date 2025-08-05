@@ -18,14 +18,6 @@
       fsType = "ext4";
     };
 
-  fileSystems."/tmp" =
-    { device = "/dev/disk/by-uuid/aebdccc4-5f5e-4ac0-a406-786c93a125d1";
-      fsType = "ext4";
-    };
-  systemd.tmpfiles.rules = [
-    "z /tmp 1777 root root 10d"
-  ];
-
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/2884-7401";
       fsType = "vfat";
