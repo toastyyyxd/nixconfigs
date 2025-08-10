@@ -11,7 +11,7 @@
       pname = "vscode-insiders";
       src = (builtins.fetchTarball {
         url = "https://code.visualstudio.com/sha/download?build=insider&os=linux-x64";
-        sha256 = "sha256:1m8kzz4pjfwi19ra6jz8m2c7ni9mfsdvgx1nws2xzsz1j8qbji48";
+        sha256 = "sha256:12jqmxah7bsg6hfa30dbdgprjqv20yhsbac97wqs58sl2hj88n3m";
       });
       version = "latest";
     });
