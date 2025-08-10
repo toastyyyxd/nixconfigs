@@ -27,7 +27,7 @@
   # environment.
   home.packages = with pkgs; [
     wget
-    hyfetch # Neofetch
+    neofetch 
     s-tui stress
     vesktop # Vencord desktop - Discord
     orca-slicer
