@@ -8,17 +8,47 @@
   services.pipewire.wireplumber.extraConfig = {
     "10-bluez" = {
       "monitor.bluez.properties" = {
+        # Disable low quality codecs, such as HSP/HFP.
+        "bluez5.autoswitch-profile" = false;
+        "bluez5.enable-hfp" = false;
+        "bluez5.enable-hsp" = false;
+
         "bluez5.enable-sbc-xq" = true;
         "bluez5.enable-msbc" = false;
         "bluez5.enable-hw-volume" = true;
         # bluez5.codecs are all enabled by default
-	"bluez5.a2dp.ldac.quality" = "hq";
+        "bluez5.a2dp.ldac.quality" = "hq";
       };
     };
     "11-bluetooth-policy" = {
       "wireplumber.settings" = {
         "bluetooth.autoswitch-to-headset-profile" = false;
       };
+    };
+    "soundcore-wakey" = {
+      "monitor.bluez.rules" = [
+        {
+          matches = [
+            {
+              # Match any bluetooth device with ids equal to that of a Soundcore Wakey
+              "device.name" = "~bluez_card.*";
+              "device.description" = "Soundcore Wakey";
+            }
+          ];
+          actions = {
+            update-props = {
+              # Set the device to use the LDAC codec
+              "bluez5.roles" = [ "a2dp_sink" ];
+              "bluez5.a2dp.codecs" = [ "aac" "aptx" "aptx_hd" "ldac" ];
+              # Set quality to high quality instead of the default of auto
+              "bluez5.a2dp.ldac.quality" = "hq";
+              "bluez5.default.rate" = 192000;
+              "bluez5.default.channels" = 2;
+              "bluez5.default.format" = "S32LE";
+            };
+          };
+        }
+      ];
     };
   };
   environment.etc = {
