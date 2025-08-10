@@ -28,16 +28,7 @@
         # Environment compat with Nix using direnv
         mkhl.direnv      
         # Theming
-        (catppuccin.catppuccin-vsc.override {
-          accent = "mauve";
-          boldKeywords = true;
-          italicComments = true;
-          italicKeywords = true;
-          extraBordersEnabled = false;
-          workbenchMode = "default";
-          bracketMode = "rainbow";
-        })
-        catppuccin.catppuccin-vsc-icons oderwat.indent-rainbow
+        oderwat.indent-rainbow
         # Zig
         prime31.zig ziglang.vscode-zig lorenzopirro.zig-snippets bwork.zig-tools
         # Typescript, basic support is built-in with vscode

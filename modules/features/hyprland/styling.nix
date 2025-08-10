@@ -5,6 +5,24 @@
   ];
   catppuccin.flavor = "mocha";
   catppuccin.enable = true;
+
+  catppuccin.vscode.profiles.main = {
+    enable = true;
+    flavor = "mocha";
+    accent = "mauve";
+    settings = {
+      boldKeywords = true;
+      italicComments = true;
+      italicKeywords = true;
+      extraBordersEnabled = false;
+      workbenchMode = "default";
+      bracketMode = "rainbow";
+    };
+    icons = {
+      enable = true;
+    };
+  };
+
   wayland.windowManager.hyprland.settings = {
     general = {
       gaps_in = 5;
