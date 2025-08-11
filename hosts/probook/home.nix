@@ -20,6 +20,7 @@
     ../../modules/features/libreoffice.nix
     ../../modules/features/zen.nix
     ../../modules/features/gimp.nix
+    ../../modules/features/obsidian.nix
   ];
 
   # Display scaling

@@ -21,6 +21,7 @@
     ../../modules/features/kicad.nix
     ../../modules/features/zen.nix
     ../../modules/features/gimp.nix
+    ../../modules/features/obsidian.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
