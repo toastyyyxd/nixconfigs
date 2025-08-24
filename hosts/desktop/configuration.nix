@@ -8,7 +8,7 @@
       ../../modules/system/journald.nix
       ../../modules/system/ssh.nix ../../modules/system/yubikey-ssh.nix
       ../../modules/system/yubikey.nix
-      ../../modules/system/keyboard.nix
+      ../../modules/system/keyboard.nix ../../modules/system/caps-mod.nix
       ../../modules/system/networking.nix # Network configurations.
       ../../modules/system/bluetooth.nix
       ../../modules/system/openrgb.nix # ARGB lights.
@@ -48,7 +48,7 @@
   users.users.toasty = {
     isNormalUser = true;
     description = "toasty";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "video" ];
     packages = with pkgs; [];
   };
   home-manager = {
