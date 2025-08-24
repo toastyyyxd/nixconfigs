@@ -15,4 +15,7 @@
       intel-gpu-tools          # Debugging and performance tools
     ];
   };
+  environment.systemPackages = with pkgs; [
+    glxinfo clinfo
+  ];
 }

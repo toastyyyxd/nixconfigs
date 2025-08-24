@@ -9,4 +9,7 @@
       rocmPackages.clr.icd
     ];
   };
+  environment.systemPackages = with pkgs; [
+    glxinfo clinfo
+  ];
 }
