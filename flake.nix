@@ -9,7 +9,10 @@
     };
     tidaluna.url = "github:Inrixia/TidaLuna";
     wiremix.url = "github:tsowell/wiremix";
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     catppuccin.url = "github:catppuccin/nix";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nixowos.url = "github:yunfachi/nixowos";
