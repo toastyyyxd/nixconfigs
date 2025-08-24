@@ -3,6 +3,6 @@
 {
   # Zen Browser configuration
   home.packages = with pkgs; [
-    inputs.zen-browser.packages."${system}".beta # Zen Browser (flake)
+    inputs.zen-browser.packages."${system}".twilight # Zen Browser (flake)
   ];
 }
