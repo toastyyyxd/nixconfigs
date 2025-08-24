@@ -19,6 +19,7 @@
     ../../modules/features/dune3d.nix
     ../../modules/features/libreoffice.nix
     ../../modules/features/kicad.nix
+    ../../modules/features/freecad.nix
     ../../modules/features/zen.nix
     ../../modules/features/gimp.nix
     ../../modules/features/obsidian.nix
