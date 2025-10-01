@@ -3,9 +3,9 @@
   imports = [
     ./programs.nix # Dependencies & compatibility.
     ./styling.nix # Styling & decor.
-    ./wallpaper.nix # swww & waypaper.
-    ./mako.nix # Notifications.
-    ./fuzzel.nix # App launcher.
+    ../ux/wallpaper.nix # swww & waypaper.
+    ../ux/mako.nix # Notifications.
+    ../ux/fuzzel.nix # App launcher.
     ./workspace-binds.nix # Generated keybinds to move and goto workspaces.
     ./binds.nix # Key & mouse bindings.
     ./media-controls.nix

@@ -8,6 +8,7 @@
 
   # Import modules
   imports = [
+    ../../modules/features/automount.nix
     ../../modules/features/hyprland
     ../../modules/features/yazi.nix
     ../../modules/features/flatpak.nix

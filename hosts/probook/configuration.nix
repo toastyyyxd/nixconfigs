@@ -6,6 +6,7 @@
     ./filesystem.nix
     ../../modules/system/global.nix
     ../../modules/system/journald.nix
+    ../../modules/system/ext-drives.nix
     ../../modules/system/ssh.nix ../../modules/system/yubikey-ssh.nix
     ../../modules/system/yubikey.nix
     ../../modules/system/swap-alt-win.nix # Windows keyboard pmo

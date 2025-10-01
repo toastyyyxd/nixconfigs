@@ -8,6 +8,7 @@
 
   # Import modules
   imports = [
+    ../../modules/features/automount.nix
     ../../modules/features/hyprland
     ../../modules/features/hyprland/fractional-scaling.nix
     ../../modules/features/yazi.nix

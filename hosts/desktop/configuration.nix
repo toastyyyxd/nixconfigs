@@ -6,6 +6,7 @@
       ./hardware-configuration.nix # Auto generated from the hardware scan, do not modify!
       ../../modules/system/global.nix
       ../../modules/system/journald.nix
+      ../../modules/system/ext-drives.nix
       ../../modules/system/ssh.nix ../../modules/system/yubikey-ssh.nix
       ../../modules/system/yubikey.nix
       ../../modules/system/keyboard.nix ../../modules/system/caps-mod.nix
