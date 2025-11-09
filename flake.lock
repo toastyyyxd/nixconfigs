@@ -320,11 +320,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1759261733,
-        "narHash": "sha256-G104PUPKBgJmcu4NWs0LUaPpSOTD4jiq4mamLWu3Oc0=",
+        "lastModified": 1759330211,
+        "narHash": "sha256-gS4pcU7Yk1fipwTUHZGx95ioP6QctyEDDqpCQhZ9uYk=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "5a21f4819ee1be645f46d6b255d49f4271ef6723",
+        "rev": "6b1b122c1bb58b9beb68a42ae3d2aabc0e4e77d2",
         "type": "github"
       },
       "original": {
@@ -802,16 +802,17 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1759250159,
-        "narHash": "sha256-xtVM8h1V3LyYmTBnKRzJEReq2jJVFHunRnzQIne7YAo=",
+        "lastModified": 1756438427,
+        "narHash": "sha256-OlwtdQTMhvmL6rjzDTH3y9bpCD6mmBvjBJLbHkK6j/M=",
         "owner": "Inrixia",
         "repo": "TidaLuna",
-        "rev": "df6d8da64db784722598e9283aefa0ae8f8a2c79",
+        "rev": "04bc3038af14e024157a56c711154c05ff197d04",
         "type": "github"
       },
       "original": {
         "owner": "Inrixia",
         "repo": "TidaLuna",
+        "rev": "04bc3038af14e024157a56c711154c05ff197d04",
         "type": "github"
       }
     },
