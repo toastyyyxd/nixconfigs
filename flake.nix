@@ -16,6 +16,7 @@
     catppuccin.url = "github:catppuccin/nix";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nixowos.url = "github:yunfachi/nixowos";
+    affinity.url = "github:mrshmllow/affinity-nix";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: let
@@ -23,6 +24,7 @@
       (_: _: { tidaluna = inputs.tidaluna.packages.x86_64-linux.default; })
       inputs.nix-vscode-extensions.overlays.default
       (_: _: { wiremix = inputs.wiremix.packages.x86_64-linux.default; })
+      (_: _: { affinity-v3 = inputs.affinity.packages.x86_64-linux.v3; })
     ];
     globalConfig = [
       inputs.nixowos.nixosModules.default

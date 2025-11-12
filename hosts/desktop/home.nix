@@ -34,6 +34,7 @@
     s-tui stress
     vesktop # Vencord desktop - Discord
     orca-slicer
+    affinity-v3
   ];
 
   # This value determines the Home Manager release that your configuration is
