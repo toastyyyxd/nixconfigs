@@ -3,6 +3,6 @@
   environment.systemPackages = with pkgs; [
     wineWowPackages.stable
     winetricks
-    corefonts vistafonts
+    corefonts vista-fonts
   ];
 }

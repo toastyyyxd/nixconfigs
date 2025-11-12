@@ -41,7 +41,7 @@
 
   # Set tmpfiles configuration.
   systemd.tmpfiles.rules = [
-    "d /nix/tmp 1777 root root 10d"
+    "d /nix/tmp 0755 root root 10d"
   ];
   nix.settings.build-dir = "/nix/tmp";
 

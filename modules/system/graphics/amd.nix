@@ -8,6 +8,6 @@
     ];
   };
   environment.systemPackages = with pkgs; [
-    glxinfo clinfo
+    mesa-demos clinfo
   ];
 }
