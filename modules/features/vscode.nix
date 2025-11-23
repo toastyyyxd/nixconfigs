@@ -42,8 +42,8 @@
         # Git
         eamodio.gitlens donjayamanne.githistory codezombiech.gitignore alefragnani.project-manager
         sanjulaganepola.github-local-actions
-        # Copilot
-        github.copilot github.copilot-chat
+        # ai slop
+        continue.continue
         # Remote SSH
         ms-vscode-remote.remote-ssh ms-vscode-remote.remote-ssh-edit ms-vscode.remote-explorer
         # Markdown

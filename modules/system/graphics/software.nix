@@ -11,7 +11,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    glxinfo                  # OpenGL information tool
+    mesa-demos                  # OpenGL information tool
     vulkaninfo               # Vulkan information tool
     xrandr                   # Display configuration tool
   ];
