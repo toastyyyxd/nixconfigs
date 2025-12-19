@@ -21,6 +21,7 @@
     ../../modules/system/docker.nix ../../modules/system/cloudflared.nix
     ../../modules/system/adb.nix
     ../../modules/system/utils.nix
+    ../../modules/system/perf-monitoring.nix
     inputs.home-manager.nixosModules.default
   ];
 

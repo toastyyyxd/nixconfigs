@@ -30,8 +30,7 @@
   # environment.
   home.packages = with pkgs; [
     wget
-    neofetch 
-    s-tui stress
+    neofetch
     vesktop # Vencord desktop - Discord
     orca-slicer
     affinity-v3

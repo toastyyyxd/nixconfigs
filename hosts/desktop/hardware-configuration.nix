@@ -11,7 +11,8 @@
   boot.initrd.availableKernelModules = [ "nvme" "ahci" "xhci_pci" "usbhid" "uas" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [ cpupower ];
+  services.lact.enable = true;
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/bd19c3f7-166a-4611-baa9-e28566d0a391";
@@ -48,5 +49,6 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.firmware = [ pkgs.linux-firmware ];
   powerManagement.cpuFreqGovernor = "performance";
 }

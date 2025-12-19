@@ -7,7 +7,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    tidaluna.url = "github:Inrixia/TidaLuna/04bc3038af14e024157a56c711154c05ff197d04";
+    tidaluna.url = "github:Inrixia/TidaLuna";
     wiremix.url = "github:tsowell/wiremix";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";

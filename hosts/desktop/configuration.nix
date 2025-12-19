@@ -23,6 +23,8 @@
       ../../modules/system/sim-driving.nix
       ../../modules/system/adb.nix
       ../../modules/system/utils.nix
+      ../../modules/system/perf-monitoring.nix
+      ../../modules/system/benchmarking.nix
       inputs.home-manager.nixosModules.default # Home manager.
     ];
   
