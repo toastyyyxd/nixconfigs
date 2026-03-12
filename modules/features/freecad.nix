@@ -8,8 +8,8 @@ let
       rev = "f6335dd4a0bb96de60bc8131510147929f2c325f";
       sha256 = "sha256-x/P3PbUcQ6X9785uV569EiwRreZoVsVYbm00Bj4DNcg=";
     }) {
-      inherit (final) system;
-      config = final.config;
+      # Explicitly set the local system to match the current stdenv host platform
+      localSystem = final.stdenv.hostPlatform;
     }).freecad;
   };
 
@@ -20,7 +20,8 @@ let
 in {
   home.packages = with customPkgs; [
     freecad
-    gmsh calculix-ccx
+    gmsh
+    calculix-ccx
     git
   ];
 }

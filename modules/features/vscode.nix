@@ -43,7 +43,7 @@
         eamodio.gitlens donjayamanne.githistory codezombiech.gitignore alefragnani.project-manager
         sanjulaganepola.github-local-actions
         # ai slop
-        continue.continue
+        kilocode.kilo-code
         # Remote SSH
         ms-vscode-remote.remote-ssh ms-vscode-remote.remote-ssh-edit ms-vscode.remote-explorer
         # Markdown

@@ -7,7 +7,8 @@
   services.pipewire = {
     extraLv2Packages = [
       pkgs.lsp-plugins
-    ];extraConfig.pipewire."10-virtual-surround" = {
+    ];
+    extraConfig.pipewire."10-virtual-surround" = {
       "stream.properties" = {
         "default.channels" = 6;
         "default.channel-map" = [ "FL" "FR" "FC" "LFE" "RL" "RR" ];
@@ -92,7 +93,8 @@
             "filter.graph" = {
               "nodes" = [
                 { "type" = "builtin"; "name" = "mix"; "label" = "mixer";
-                  "control" = { "Gain 1" = 1.0; "Gain 2" = 0.0; "Gain 3" = 1.0; "Gain 4" = 0.0; "Gain 5" = 0.2; "Gain 6" = 0.0; };
+                  # Scaled by 0.6 to prevent clipping (1.0+1.0+0.2 = 2.2 peak -> safe at 1.32)
+                  "control" = { "Gain 1" = 0.6; "Gain 2" = 0.0; "Gain 3" = 0.6; "Gain 4" = 0.0; "Gain 5" = 0.12; "Gain 6" = 0.0; };
                 }
                 { "type" = "builtin"; "name" = "del"; "label" = "delay"; "config" = { "max-delay" = 1.0; }; "control" = { "Delay (s)" = 0.02; }; }
               ];
@@ -132,7 +134,8 @@
             "filter.graph" = {
               "nodes" = [
                 { "type" = "builtin"; "name" = "mix"; "label" = "mixer";
-                  "control" = { "Gain 1" = 0.0; "Gain 2" = 1.0; "Gain 3" = 1.0; "Gain 4" = 0.0; "Gain 5" = 0.0; "Gain 6" = 0.2; };
+                  # Scaled by 0.6 to prevent clipping (1.0+1.0+0.2 = 2.2 peak -> safe at 1.32)
+                  "control" = { "Gain 1" = 0.0; "Gain 2" = 0.6; "Gain 3" = 0.6; "Gain 4" = 0.0; "Gain 5" = 0.0; "Gain 6" = 0.12; };
                 }
                 { "type" = "builtin"; "name" = "del"; "label" = "delay"; "config" = { "max-delay" = 1.0; }; "control" = { "Delay (s)" = 0.02; }; }
               ];
@@ -176,18 +179,23 @@
                 { "type" = "builtin"; "name" = "cFC"; "label" = "copy"; }
 
                 { "type" = "builtin"; "name" = "m_lpf"; "label" = "mixer";
-                  "control" = { "Gain 1" = 0.8; "Gain 2" = 0.8; "Gain 3" = 1.0; }; }
+                  # Scaled by 0.7 to prevent clipping in summed low-pass path
+                  "control" = { "Gain 1" = 0.56; "Gain 2" = 0.56; "Gain 3" = 0.7; }; 
+                }
                 { "type" = "builtin"; "name" = "lpf"; "label" = "bq_lowpass";
                   "control" = { "Freq" = 120.0; }; }
 
                 { "type" = "builtin"; "name" = "m_tre"; "label" = "mixer";
-                  "control" = { "Gain 1" = 0.8; "Gain 2" = 0.8; "Gain 3" = 1.0; }; }
+                  # Scaled by 0.7 to prevent clipping in summed high-pass path
+                  "control" = { "Gain 1" = 0.56; "Gain 2" = 0.56; "Gain 3" = 0.7; }; 
+                }
                 { "type" = "builtin"; "name" = "hpf"; "label" = "bq_highpass";
                   "control" = { "Freq" = 1200.0; }; }
 
                 { "type" = "builtin"; "name" = "m_fin"; "label" = "mixer";
-                  "control" = { "Gain 1" = 1.0; "Gain 2" = 0.7; "Gain 3" = 0.2;
-                                "Gain 4" = 0.2; "Gain 5" = 0.3; }; }
+                  # Scaled by 0.7 to prevent clipping in final mix (1.0+0.7+0.2+0.2+0.3 = 2.4 peak -> safe at 1.68)
+                  "control" = { "Gain 1" = 0.7; "Gain 2" = 0.49; "Gain 3" = 0.14; "Gain 4" = 0.14; "Gain 5" = 0.21; }; 
+                }
               ];
 
               "links" = [

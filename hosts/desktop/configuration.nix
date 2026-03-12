@@ -10,6 +10,7 @@
       ../../modules/system/ssh.nix ../../modules/system/yubikey-ssh.nix
       ../../modules/system/yubikey.nix
       ../../modules/system/keyboard.nix ../../modules/system/caps-mod.nix
+      ../../modules/system/cloudflare-warp.nix
       ../../modules/system/networking.nix # Network configurations.
       ../../modules/system/bluetooth.nix
       ../../modules/system/openrgb.nix # ARGB lights.
@@ -27,6 +28,19 @@
       ../../modules/system/benchmarking.nix
       inputs.home-manager.nixosModules.default # Home manager.
     ];
+
+  # HW
+  boot.initrd.availableKernelModules = [ "nvme" "ahci" "xhci_pci" "usbhid" "uas" "usb_storage" "sd_mod" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-amd" ];
+  boot.blacklistedKernelModules = [ "k10temp" ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [ cpupower
+     (pkgs.stdenv.mkDerivation rec { pname = "zenpower"; version = "unstable-2026-01-25"; src = pkgs.fetchFromGitHub { owner = "mattkeenan"; repo = "zenpower5"; rev = "66871d8e59c3741e00de2eb1f61c3b64263ed10b"; hash = "sha256-g0zVTDi5owa6XfQN8vlFwGX+gpRIg+5q1F4EuxAk9Sk="; }; hardeningDisable = [ "pic" ]; nativeBuildInputs = config.boot.kernelPackages.kernel.moduleBuildDependencies; makeFlags = [ "KERNEL_BUILD=${config.boot.kernelPackages.kernel.dev}/lib/modules/${config.boot.kernelPackages.kernel.modDirVersion}/build" ]; installPhase = '' install -D zenpower.ko -t "$out/lib/modules/${config.boot.kernelPackages.kernel.modDirVersion}/kernel/drivers/hwmon/zenpower/" ''; meta = { description = "Linux kernel driver for AMD Zen CPUs (zenpower5 fork)"; license = pkgs.lib.licenses.gpl2Plus; platforms = [ "x86_64-linux" ]; }; })
+  ];
+  services.lact.enable = true;
+  hardware.firmware = [ pkgs.linux-firmware ];
+  powerManagement.cpuFreqGovernor = "performance";
+  hardware.cpu.amd.ryzen-smu.enable = true;
   
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

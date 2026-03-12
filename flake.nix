@@ -15,7 +15,7 @@
     };
     catppuccin.url = "github:catppuccin/nix";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-    nixowos.url = "github:yunfachi/nixowos";
+    nixowos.url = "github:yunfachi/nixowos/638ec8eaecbfecdeebba5d1cbe75b070f7825817";
     affinity.url = "github:mrshmllow/affinity-nix";
   };
 
@@ -53,6 +53,7 @@
           inputs.catppuccin.nixosModules.catppuccin
           inputs.home-manager.nixosModules.default
           {
+            nixpkgs.overlays = overlays;
             home-manager.useGlobalPkgs = true;
           }
         ];

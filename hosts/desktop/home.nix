@@ -10,6 +10,7 @@
   imports = [
     ../../modules/features/automount.nix
     ../../modules/features/hyprland
+    ../../modules/features/gaming.nix
     ../../modules/features/yazi.nix
     ../../modules/features/flatpak.nix
     ../../modules/features/git.nix
@@ -30,7 +31,6 @@
   # environment.
   home.packages = with pkgs; [
     wget
-    neofetch
     vesktop # Vencord desktop - Discord
     orca-slicer
     affinity-v3
