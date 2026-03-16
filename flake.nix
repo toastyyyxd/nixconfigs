@@ -17,6 +17,7 @@
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nixowos.url = "github:yunfachi/nixowos/638ec8eaecbfecdeebba5d1cbe75b070f7825817";
     affinity.url = "github:mrshmllow/affinity-nix";
+    nixvim.url = "github:nix-community/nixvim";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: let
