@@ -6,10 +6,10 @@
   programs.kitty.enable = true; # Always, for use and recovery.
   
   wayland.windowManager.hyprland.settings = {
-    windowrulev2 = [
-      "stayfocused,class:(zoom),initialTitle:(menu window)" # Zoom fix
-      "float,class:(kitty)" # Float terminal by default
-      "float,class:(yazi)" # Float file explorer by default
+    windowrule = [
+      "stay_focused on, match:class ^zoom$, match:title ^menu window$"
+      "float on, match:class ^kitty$"
+      "float on, match:class ^yazi$"
     ];
   };
 }

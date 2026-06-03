@@ -27,6 +27,14 @@
     ../../modules/features/obsidian.nix
   ];
 
+  wayland.windowManager.hyprland.settings = {
+    monitor = [ "DP-1, 2560x1440@170, auto, 1, bitdepth, 10, vrr, 2" ];
+    cursor = {
+      no_hardware_cursors = false;
+      no_warps = false;
+    };
+  };
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
@@ -35,6 +43,7 @@
     orca-slicer
     affinity-v3
   ];
+
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

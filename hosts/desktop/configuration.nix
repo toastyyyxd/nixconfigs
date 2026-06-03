@@ -13,6 +13,7 @@
       ../../modules/system/cloudflare-warp.nix
       ../../modules/system/networking.nix # Network configurations.
       ../../modules/system/bluetooth.nix
+      ../../modules/system/printing.nix
       ../../modules/system/openrgb.nix # ARGB lights.
       ../../modules/system/audio.nix ../../modules/system/alc4080-workaround.nix # Audio & workaround for slow boot with ALC4080 USB audio chip.
       ../../modules/system/audio/virtual-surround.nix

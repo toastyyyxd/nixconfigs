@@ -7,6 +7,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     tidaluna.url = "github:Inrixia/TidaLuna";
     wiremix.url = "github:tsowell/wiremix";
     zen-browser = {
@@ -21,11 +22,13 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: let
+
     overlays = [
-      (_: _: { tidaluna = inputs.tidaluna.packages.x86_64-linux.default; })
+      (final: _: { tidaluna = inputs.tidaluna.packages.${final.stdenv.hostPlatform.system}.default; })
       inputs.nix-vscode-extensions.overlays.default
-      (_: _: { wiremix = inputs.wiremix.packages.x86_64-linux.default; })
-      (_: _: { affinity-v3 = inputs.affinity.packages.x86_64-linux.v3; })
+      (final: _: { wiremix = inputs.wiremix.packages.${final.stdenv.hostPlatform.system}.default; })
+      inputs.affinity.overlays.default
+      (import ./overlays/openldac.nix)
     ];
     globalConfig = [
       inputs.nixowos.nixosModules.default

@@ -1,9 +1,10 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, lib, inputs, ... }:
 {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeModules.nixvim
   ];
   programs.nixvim = {
+    nixpkgs.config.allowUnfree = true;
     enable = true;
     keymaps = [
       {
@@ -83,15 +84,29 @@
       lsp = {
         enable = true;
         inlayHints = true;
-        servers = {
-          zls.enable = true;
-          nil_ls.enable = true;
-          rust_analyzer.enable = true;
-        };
+        servers = lib.recursiveUpdate
+          {
+            nil_ls.enable = true;
+          } 
+          (builtins.mapAttrs (name: value: value // {
+            package = null;
+          }) {
+            zls.enable = true;
+            rust_analyzer = {
+              enable = true;
+              installCargo = false;
+              installRustc = false;
+            };
+            pyright.enable = true;
+          });
       };
-      lspconfig.enable = true;
 
-      hmts.enable = true; # nix language fencing
+      # java stuff
+      java.enable = true;
+      spring-boot.enable = true; # dependency of java
+      # jdtls.enable = true; java plugin manages jdtls too i think apparently idk
+
+      hmts.enable = false; # nix language fencing, broken as of now
       nix-develop.enable = true;
 
       cmp = {
@@ -123,7 +138,9 @@
       cmp-path.enable = true;
       cmp-nvim-lsp-signature-help.enable = true;
       inc-rename.enable = true;
-
+      
+      direnv.enable = true;
+      direnv.autoLoad = true;
       nvim-autopairs.enable = true;
       barbar.enable = true;
       nvim-tree = {
@@ -136,7 +153,7 @@
       };
       lualine = {
         enable = true;
-        settings.options.theme = "catppuccin";
+        settings.options.theme = "auto"; # catppuccin isn't here anymore so auto should sort itself out
       };
       treesitter = {
         enable = true;
@@ -150,5 +167,8 @@
       web-devicons.enable = true;
       neocord.enable = true;
     };
+    extraPackages = with pkgs; [
+      unzip # java or springboot or whatever sets up jdtls needs this
+    ];
   };
 }
