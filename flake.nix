@@ -83,6 +83,22 @@
           }
         ];
       };
+      carbon = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+        };
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+        };
+        modules = globalConfig ++ [
+          ./hosts/carbon/configuration.nix
+          inputs.home-manager.nixosModules.default
+          {
+            home-manager.useGlobalPkgs = true;
+          }
+        ];
+      };
     };
   };
 }
