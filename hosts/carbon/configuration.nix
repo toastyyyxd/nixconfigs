@@ -8,6 +8,13 @@
     inputs.home-manager.nixosModules.default
   ];
 
+  boot.initrd.availableKernelModules = [
+    "virtio_pci" "virtio_blk" "virtio_scsi" "virtio_net"
+  ];
+  boot.initrd.kernelModules = [ "virtio_console" ];
+
+  services.qemuGuest.enable = true;
+
   services.openssh = {
     enable = true;
     settings = {
